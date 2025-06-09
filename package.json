@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "Upload": "youtrack-workflow upload youtrack-scripts/scripts/dungeon-code --host %Host% --token %Token%"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
+  "devDependencies": {
     "@jetbrains/youtrack-scripting": "^0.2.1",
     "@jetbrains/youtrack-scripting-api": "^2022.1.46592"
-  },
-  "devDependencies": {
-    "prettier": "^3.5.3"
   }
 }
