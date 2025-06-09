@@ -2,9 +2,10 @@
   "name" : "dungeon-code",
   "title" : "Dungeon Code",
   "version" : "1.0.0",
+  "description": "Gamification System for YouTrack",
   "visual" : true,
   "vendor" : {
     "name" : "Lind Sergei",
-    "email" : "sergei.lind@tutamail.com"
+    "url": "https://github.com/Valyutik"
   }
 }
