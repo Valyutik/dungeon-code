@@ -1,10 +1,10 @@
 {
   "name" : "dungeon-code",
   "title" : "Dungeon Code",
-  "version" : "0.0.1",
+  "version" : "1.0.0",
   "visual" : true,
   "vendor" : {
-    "name" : "Сергей Линд",
+    "name" : "Lind Sergei",
     "email" : "sergei.lind@tutamail.com"
   }
 }
