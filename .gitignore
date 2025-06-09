@@ -44,6 +44,7 @@ coverage/
 # YouTrack workflow settings
 .youtrack-workflow.json
 *.youtrack-workflow.*
+/youtrack/
 
 # Other
 *.tgz
