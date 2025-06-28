@@ -1,11 +1,15 @@
 {
-  "name" : "dungeon-code",
-  "title" : "Dungeon Code",
-  "version" : "1.0.0",
-  "description": "Gamification System for YouTrack",
-  "visual" : true,
-  "vendor" : {
-    "name" : "Sergei Lind",
+  "$schema": "https://json.schemastore.org/youtrack-app.json",
+  "changeNotes": "<strong>Initial Release<strong>",
+  "description": "<strong>Transform your YouTrack into a gamified adventure!</strong><br> Dungeon Code is a set of custom workflows that introduce RPG mechanics like HP, XP, levels, and player deaths. Punish overdue issues with damage, track player stats, and resurrect your team with style.",
+  "icon": "icon.svg",
+  "minYouTrackVersion": "2024.3.0",
+  "name": "dungeon-code",
+  "title": "Dungeon Code",
+  "vendor": {
+    "name": "Sergei Lind",
     "url": "https://github.com/Valyutik"
-  }
+  },
+  "version": "1.0.0",
+  "visual": true
 }
