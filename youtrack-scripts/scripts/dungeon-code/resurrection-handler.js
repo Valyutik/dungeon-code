@@ -1,15 +1,5 @@
 const entities = require('@jetbrains/youtrack-scripting-api/entities');
 
-// === 🛠 CONFIGURATION ===
-
-const CONFIG = {
-    MAX_HP: 16,
-    DEFAULT_XP: 0,
-    DEFAULT_LEVEL: 1
-};
-
-// === END CONFIGURATION ===
-
 exports.rule = entities.Issue.onChange({
     title: 'Resurrect player when status changed from Dead to Alive',
     guard: (ctx) => {
@@ -17,7 +7,7 @@ exports.rule = entities.Issue.onChange({
         const oldStatus = issue.oldValue('Status');
         const newStatus = issue.fields.Status;
 
-        return issue.project.shortName === 'DC' &&
+        return issue.project.shortName === ctx.settings.ProjectKey &&
             oldStatus && newStatus &&
             oldStatus.name === 'Dead' &&
             newStatus.name === 'Alive';
@@ -26,12 +16,12 @@ exports.rule = entities.Issue.onChange({
         const card = ctx.issue;
         const player = card.fields.Player;
 
-        card.fields.HP = CONFIG.MAX_HP;
-        card.fields.XP = CONFIG.DEFAULT_XP;
-        card.fields.Level = CONFIG.DEFAULT_LEVEL;
+        card.fields.HP = ctx.setting.DefaultHP;
+        card.fields.XP = 0;
+        card.fields.Level = 1;
 
-        notifyPlayerResurrected(player, CONFIG.MAX_HP);
-        notifyLeaderResurrection(card, player, CONFIG.MAX_HP);
+        notifyPlayerResurrected(player, ctx.setting.DefaultHP);
+        notifyLeaderResurrection(card, player, ctx.setting.DefaultHP);
 
         await card.save();
     },

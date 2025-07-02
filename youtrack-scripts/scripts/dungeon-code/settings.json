@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Dungeon Code Settings",
+  "description": "Configure global settings for Dungeon Code gamification modules.",
+  "properties": {
+    "ProjectKey": {
+      "title": "Player Card Project Key",
+      "type": "string",
+      "description": "Key of the project where player cards are stored",
+      "default": "DC",
+      "x-scope": "GLOBAL"
+    },
+    "DamageDiceCount": {
+      "title": "Damage Dice Count",
+      "type": "integer",
+      "description": "How many dice to roll for damage",
+      "default": 1,
+      "x-scope": "GLOBAL"
+    },
+    "DamageDiceSides": {
+      "title": "Damage Dice Sides",
+      "type": "integer",
+      "description": "Number of sides on the damage dice (e.g., 4 = d4)",
+      "default": 4,
+      "x-scope": "GLOBAL"
+    },
+    "DefaultHP": {
+      "title": "Default HP",
+      "type": "integer",
+      "description": "Default HP for a player",
+      "default": 16,
+      "x-scope": "GLOBAL"
+    },
+    "XpLevelMultiplier": {
+      "title": "XP Level Multiplier",
+      "type": "integer",
+      "description": "XP required per level = current level × multiplier",
+      "default": 50,
+      "x-scope": "GLOBAL"
+    },
+    "XpRewardCritical": {
+      "title": "XP for Critical",
+      "type": "integer",
+      "description": "XP awarded for completing a Critical priority task",
+      "default": 10,
+      "x-scope": "GLOBAL"
+    },
+    "XpRewardMajor": {
+      "title": "XP for Major",
+      "type": "integer",
+      "description": "XP awarded for completing a Major priority task",
+      "default": 5,
+      "x-scope": "GLOBAL"
+    },
+    "XpRewardNormal": {
+      "title": "XP for Normal",
+      "type": "integer",
+      "description": "XP awarded for completing a Normal priority task",
+      "default": 3,
+      "x-scope": "GLOBAL"
+    },
+    "XpRewardMinor": {
+      "title": "XP for Minor",
+      "type": "integer",
+      "description": "XP awarded for completing a Minor priority task",
+      "default": 1,
+      "x-scope": "GLOBAL"
+    },
+    "HpBonusDiceCount": {
+      "title": "HP Bonus Dice Count",
+      "type": "integer",
+      "description": "Number of dice to roll on level up",
+      "default": 1,
+      "x-scope": "GLOBAL"
+    },
+    "HpBonusDiceSides": {
+      "title": "HP Bonus Dice Sides",
+      "type": "integer",
+      "description": "Number of sides per die (e.g., 8 = d8)",
+      "default": 8,
+      "x-scope": "GLOBAL"
+    }
+  }
+}

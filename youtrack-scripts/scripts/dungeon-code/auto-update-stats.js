@@ -4,7 +4,7 @@ exports.rule = entities.Issue.onChange({
     title: 'Auto-update Stats field when HP, XP or Level change',
     guard: (ctx) => {
         const issue = ctx.issue;
-        return issue.project.shortName === 'DC' &&
+        return issue.project.shortName === ctx.settings.ProjectKey &&
             (
                 issue.isChanged('HP') ||
                 issue.isChanged('XP') ||

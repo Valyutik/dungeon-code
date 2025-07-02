@@ -1,23 +1,8 @@
 // noinspection JSCheckFunctionSignatures
-
 const entities = require('@jetbrains/youtrack-scripting-api/entities');
 const workflow = require('@jetbrains/youtrack-scripting-api/workflow');
 
-// === 🛠 CONFIGURATION ===
-
-const PLAYER_PROJECT_KEY = 'DC';              // Project key with player cards
-const XP_LEVEL_MULTIPLIER = 50;               // XP per level = level * this multiplier
-
-const XP_REWARDS_BY_PRIORITY = {              // Experience for completing tasks by priority
-    critical: 10,
-    major: 5,
-    normal: 3,
-    minor: 1
-};
-
 const HP_BONUS_DICE = { count: 1, sides: 8 }; // When passing a level - roll for HP
-
-// === END CONFIGURATION ===
 
 exports.rule = entities.Issue.onChange({
     title: 'Accrue experience and level up',
@@ -29,12 +14,19 @@ exports.rule = entities.Issue.onChange({
         const issue = ctx.issue;
         const assignee = issue.fields.Assignee;
 
+        const XP_REWARDS_BY_PRIORITY = {
+            critical: ctx.settings.XpRewardCritical,
+            major: ctx.settings.XpRewardMajor,
+            normal: ctx.settings.XpRewardNormal,
+            minor: ctx.settings.XpRewardMinor
+        };
+
         if (!assignee) {
             workflow.message("No assignee — no XP awarded");
             return;
         }
 
-        const playerCard = findPlayerCardForUser(assignee);
+        const playerCard = findPlayerCardForUser(assignee, ctx.settings.ProjectKey);
         if (!playerCard) {
             workflow.message(`Player card not found for ${assignee.login}`);
             return;
@@ -50,7 +42,7 @@ exports.rule = entities.Issue.onChange({
         currentXP += xpGain;
         playerCard.fields.XP = currentXP;
 
-        const xpNeeded = XP_LEVEL_MULTIPLIER * currentLevel;
+        const xpNeeded = ctx.settings.XpLevelMultiplier * currentLevel;
         if (currentXP >= xpNeeded) {
             const newLevel = currentLevel + 1;
             const hpBonus = rollDice(HP_BONUS_DICE.count, HP_BONUS_DICE.sides);
@@ -79,8 +71,8 @@ exports.rule = entities.Issue.onChange({
     }
 });
 
-function findPlayerCardForUser(user) {
-    const project = entities.Project.findByKey(PLAYER_PROJECT_KEY);
+function findPlayerCardForUser(user, projectKey) {
+    const project = entities.Project.findByKey(projectKey);
     if (!project) {
         workflow.message('Player card project not found');
         return null;

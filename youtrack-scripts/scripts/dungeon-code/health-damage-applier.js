@@ -1,20 +1,12 @@
 // noinspection JSCheckFunctionSignatures
-
 const entities = require('@jetbrains/youtrack-scripting-api/entities');
-
-// === 🛠 CONFIGURATION ===
-
-const PROJECT_KEY = 'DC';                                    // Project key with player cards
-const DAMAGE_DICE = { count: 1, sides: 4 }; // Number of sides of the dice for damage (d4, d6, d8, etc.)
-
-// === END CONFIGURATION ===
 
 exports.rule = entities.Issue.onSchedule({
     title: 'Do damage for overdue tasks',
     cron: '0 0 0 * * ?',
     search: '#Unresolved has: {Due Date}',
     action: (ctx) => {
-        const project = entities.Project.findByKey(PROJECT_KEY);
+        const project = entities.Project.findByKey(ctx.settings.ProjectKey);
         const issue = ctx.issue;
 
         if (!project) {
@@ -40,7 +32,7 @@ exports.rule = entities.Issue.onSchedule({
                 return;
             }
 
-            const damage = rollDice(DAMAGE_DICE.count, DAMAGE_DICE.sides);
+            const damage = rollDice(ctx.settings.DamageDiceCount, ctx.settings.DamageDiceSides);
             let currentHP = parseInt(playerCard.fields.HP);
             currentHP = Math.max(0, currentHP - damage);
             playerCard.fields.HP = currentHP;
