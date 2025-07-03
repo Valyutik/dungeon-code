@@ -81,5 +81,18 @@
       "default": 8,
       "x-scope": "GLOBAL"
     }
-  }
+  },
+  "required": [
+    "ProjectKey",
+    "DamageDiceCount",
+    "DamageDiceSides",
+    "DefaultHP",
+    "XpLevelMultiplier",
+    "XpRewardCritical",
+    "XpRewardMajor",
+    "XpRewardNormal",
+    "XpRewardMinor",
+    "HpBonusDiceCount",
+    "HpBonusDiceSides"
+  ]
 }
