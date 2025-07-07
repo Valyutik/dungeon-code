@@ -1,132 +1,136 @@
 ## 🚀 Getting Started
 
-**Dungeon Code** is a app for JetBrains YouTrack that turns task completion into a real adventure. Follow the steps below to deploy it:
+**Dungeon Code** is a gamified workflow system for JetBrains YouTrack that turns task management into a true adventure. Follow the steps below to set it up in your environment:
 
 ---
 
-### 1. 📦 Installing the application
+### 1. 📦 Install the Application
 
-There are two ways to install Dungeon Code:
+You can install Dungeon Code in two ways:
 
-#### 🛒 Installation via JetBrains Marketplace:
+#### 🛒 Install via JetBrains Marketplace:
 
-* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code?noRedirect=true) and click **“Install”**
+* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code/edit) and click **"Install"**
 
 #### 📁 Manual installation from GitHub:
 
-* Download [the latest version of the archive](https://github.com/Valyutik/dungeon-code/releases/latest)
-* Go to Administration → Applications → Upload from ZIP and select the downloaded archive
+* Download the [latest release archive](https://github.com/Valyutik/dungeon-code/releases/latest)
+* Go to **Administration → Applications → Upload from ZIP** and select the downloaded archive
 
 ---
 
-### 2. 🧱 Creating a project with player cards
+### 2. 🧱 Create a Project for Player Cards
 
-* Create a separate **empty project** (for example, `Dungeon Code`) — it will store the data of all employees
-* Delete all standard fields and **disable default applications and workflows** in the settings
-* This will allow you to control the structure manually and avoid conflicts
+* Create a dedicated **empty project** (e.g., `Dungeon Code`) — this will store player card data
+* Remove all default fields and **detach any default apps or workflows**
+* This allows you to fully control the structure and avoid conflicts
 
-> 💡 This project will be used to store each player's HP, XP, and level.
-
----
-
-### 3. 🛠 Configuring fields in projects with tasks
-
-* Go to the relevant projects where tasks will be tracked
-* Add the `Due Date` workflow and the corresponding field (if it does not already exist)
-* Make sure that the project has the `Priority`, `Assignee`, and `Stage` fields
+> 💡 This project will be used to store HP, XP, and Level for each player.
 
 ---
 
-### 4. ⚙️ Configuring application settings
+### 3. 🛠 Configure Fields in Task Projects
+
+* Go to the projects where you manage tasks
+* Add the `Due Date` field and workflow (if not already present)
+* Make sure the project includes the following fields:
+
+  * `Priority`
+  * `Assignee`
+  * `Stage`
+
+---
+
+### 4. ⚙️ Configure Application Settings
 
 * Go to **Administration → Applications → Dungeon Code**
-* Enter the project key with cards (for example, `DC`)
+* Enter the key of the player card project (e.g., `DC`)
 * Save the settings
 
 ![App Settings](docs/images/App%20Settings.jpeg)
 
 ---
 
-### 5. 🔌 Connecting the application to projects
+### 5. 🔌 Connect the App to Projects
 
-* Go to the **Projects** tab in the Dungeon Code settings
+* Open the **Projects** tab in Dungeon Code settings
 * Connect:
 
-* the project with cards (DC)
-* projects with your tasks
+  * the project with player cards (DC)
+  * the projects where you manage tasks
 
 ---
 
-### 6. ⚙️ Setting up workflows
+### 6. ⚙️ Configure Workflows
 
-* Go to **Technical Information → Go to workflow settings**
-* Make sure all modules are active and linked to the right projects:
+* Go to **Technical Details → Open Workflow Settings**
+* Ensure all modules are active and linked to the appropriate projects:
 
-| Module                  | Purpose                   | Apply to project |
-| ----------------------- | ---------------------------- | ------------------- |
-| `xp-level-update`       | Awards XP and increases level | projects with tasks  |
-| `health-damage-applier` | Inflicts damage for delays    | projects with tasks  |
-| `player-card-generator` | Creates player cards      | projects with tasks  |
-| `resurrection-handler`  | Resurrects when status changes | project with cards |
-| `auto-update-stats`     | Updates visible statistics | project with cards |
-
----
-
-### 7. 🧩 Automatic field addition
-
-* After activating all workflows, YouTrack will offer to **add missing fields**
-* Agree and check that all fields have been added to the desired project
+| Module                  | Purpose                            | Apply to Project    |
+| ----------------------- | ---------------------------------- | ------------------- |
+| `xp-level-update`       | Grants XP and levels up players    | Task projects       |
+| `health-damage-applier` | Deals damage for overdue tasks     | Task projects       |
+| `player-card-generator` | Automatically creates player cards | Task projects       |
+| `resurrection-handler`  | Handles revival on status change   | Player card project |
+| `auto-update-stats`     | Updates the visual stats field     | Player card project |
 
 ---
 
-### 8. 🧾 Manually configuring card fields
+### 7. 🧩 Auto-Add Fields
 
-* Go to **Projects → Project with cards → Fields**
-* Make sure that the following fields are added and configured correctly for player cards:
-
-* `HP` (integer)
-
-![App Settings](docs/images/HP%20Field%20Settings.jpeg)
-
-* `XP` (integer)
-
-![App Settings](docs/images/XP%20Field%20Settings.jpeg)
-
-* `Level` (integer)
-
-![App Settings](docs/images/Level%20Field%20Settings.jpeg)
-
-* `Player` (User)
-
-![App Settings](docs/images/Player%20Field%20Settings.jpeg)
-
-* `Status` (Enumeration: `Alive`, `Dead`)
-
-![App Settings](docs/images/Status%20Field%20Settings.jpeg)
-
-* `Stats` (automatically updated text field displaying a summary)
-
-![App Settings](docs/images/Stats%20Field%20Settings.jpeg)
+* Once workflows are activated, YouTrack will prompt you to **add missing fields**
+* Accept the changes and verify that all fields are present in the appropriate projects
 
 ---
 
-### 9. 🧪 Configuring card display
+### 8. 🧾 Manually Configure Player Card Fields
 
-* In a project with cards, open the **Agile board**
+* Go to **Projects → Player Card Project → Fields**
+* Ensure that all necessary fields are added and properly configured:
+
+  * `HP` (integer)
+
+  ![HP Field Settings](docs/images/HP%20Field%20Settings.jpeg)
+
+  * `XP` (integer)
+
+  ![XP Field Settings](docs/images/XP%20Field%20Settings.jpeg)
+
+  * `Level` (integer)
+
+  ![Level Field Settings](docs/images/Level%20Field%20Settings.jpeg)
+
+  * `Player` (user field)
+
+  ![Player Field Settings](docs/images/Player%20Field%20Settings.jpeg)
+
+  * `Status` (enum with values `Alive`, `Dead`)
+
+  ![Status Field Settings](docs/images/Status%20Field%20Settings.jpeg)
+
+  * `Stats` (auto-updating text field to display summary)
+
+  ![Stats Field Settings](docs/images/Stats%20Field%20Settings.jpeg)
+
+---
+
+### 9. 🧪 Configure Card Appearance
+
+* Open the **Agile board** for the player card project
 * Configure card display:
 
-* By **Status** field (Alive / Dead)
-    * Enable the display of the `Stats` field, which shows HP, XP, and player level.
+  * Use **Status** as the column grouping (Alive / Dead)
+  * Enable the `Stats` field on the card view — it shows HP, XP, and Level
 
-![App Settings](docs/images/Board%20Settings%20Collumns.jpeg)
+![Board Columns](docs/images/Board%20Settings%20Collumns.jpeg)
 
-![App Settings](docs/images/Board%20Settings%20Card.jpeg)
+![Board Card](docs/images/Board%20Settings%20Card.jpeg)
 
 ---
 
 ### ✅ Done!
 
-Now each completed task brings experience, and overdue ones cause damage!
-Watch your colleagues' progress and don't let them “die”
+Now every completed task earns XP, while overdue tasks deal damage!
+Track your teammates' progression and make sure nobody "dies" 🪦
 
 ---
