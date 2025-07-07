@@ -10,7 +10,7 @@ You can install Dungeon Code in two ways:
 
 #### 🛒 Install via JetBrains Marketplace:
 
-* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code/edit) and click **"Install"**
+* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code?noRedirect=true) and click **"Install"**
 
 #### 📁 Manual installation from GitHub:
 
