@@ -1,6 +1,6 @@
 ## 🚀 Getting Started
 
-**Dungeon Code** is a gamified workflow system for JetBrains YouTrack that turns task completion into a real adventure. Follow the steps below to deploy it:
+**Dungeon Code** is a app for JetBrains YouTrack that turns task completion into a real adventure. Follow the steps below to deploy it:
 
 ---
 
@@ -10,11 +10,11 @@ There are two ways to install Dungeon Code:
 
 #### 🛒 Installation via JetBrains Marketplace:
 
-* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code/edit) and click **“Install”**
+* Go to the [plugin page](https://plugins.jetbrains.com/plugin/27603-dungeon-code?noRedirect=true) and click **“Install”**
 
 #### 📁 Manual installation from GitHub:
 
-* Download the latest version of the archive (https://github.com/Valyutik/dungeon-code/releases/latest)
+* Download [the latest version of the archive](https://github.com/Valyutik/dungeon-code/releases/latest)
 * Go to Administration → Applications → Upload from ZIP and select the downloaded archive
 
 ---
