@@ -127,6 +127,6 @@ There are two ways to install Dungeon Code:
 ### ✅ Done!
 
 Now each completed task brings experience, and overdue ones cause damage!
-Watch your colleagues' progress and don't let them “die” 🪦
+Watch your colleagues' progress and don't let them “die”
 
 ---
