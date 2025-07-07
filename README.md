@@ -131,6 +131,6 @@ You can install Dungeon Code in two ways:
 ### ✅ Done!
 
 Now every completed task earns XP, while overdue tasks deal damage!
-Track your teammates' progression and make sure nobody "dies" 🪦
+Track your teammates' progression and make sure nobody "dies"
 
 ---
