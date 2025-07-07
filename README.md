@@ -84,15 +84,15 @@ There are two ways to install Dungeon Code:
 * Go to **Projects → Project with cards → Fields**
 * Make sure that the following fields are added and configured correctly for player cards:
 
-* `HP` (numeric)
+* `HP` (integer)
 
   ![App Settings](docs/images/HP%20Field%20Settings.jpeg)
 
-* `XP` (numeric)
+* `XP` (integer)
 
 ![App Settings](docs/images/XP%20Field%20Settings.jpeg)
 
-* `Level` (numeric)
+* `Level` (integer)
 
   ![App Settings](docs/images/Level%20Field%20Settings.jpeg)
 
