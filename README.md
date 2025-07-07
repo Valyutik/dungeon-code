@@ -1,6 +1,6 @@
 ## 🚀 Getting Started
 
-**Dungeon Code** is a gamified workflow system for JetBrains YouTrack that turns task management into a true adventure. Follow the steps below to set it up in your environment:
+**Dungeon Code** is a app for JetBrains YouTrack that turns task management into a true adventure. Follow the steps below to set it up in your environment:
 
 ---
 
