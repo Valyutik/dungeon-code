@@ -120,7 +120,7 @@ You can install Dungeon Code in two ways:
 * Configure card display:
 
   * Use **Status** as the column grouping (Alive / Dead)
-  * Enable the `Stats` field on the card view — it shows HP, XP, and Level
+  * Enable the **Stats** field on the card view — it shows HP, XP, and Level
 
 ![Board Columns](docs/images/Board%20Settings%20Collumns.jpeg)
 
