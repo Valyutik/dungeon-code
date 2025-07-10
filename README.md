@@ -114,7 +114,7 @@ You can install Dungeon Code in two ways:
 
 ---
 
-### 9. 🧪 Configure Card Appearance
+### 9. 🧪 Configure Agile Board
 
 * Open the **Agile board** for the player card project
 * Configure card display:
