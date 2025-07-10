@@ -64,9 +64,9 @@ You can install Dungeon Code in two ways:
 ### 6. ⚙️ Configure Workflows
 
 * Go to **Technical Details → Open Workflow Settings**
-* Ensure all modules are active and linked to the appropriate projects:
+* Activate and assign the following modules to the corresponding projects:
 
-| Module                  | Purpose                            | Apply to Project    |
+| Module                  | Purpose                            | Assign to    |
 | ----------------------- | ---------------------------------- | ------------------- |
 | `xp-level-update`       | Grants XP and levels up players    | Task projects       |
 | `health-damage-applier` | Deals damage for overdue tasks     | Task projects       |
